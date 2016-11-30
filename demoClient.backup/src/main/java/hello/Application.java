@@ -24,9 +24,11 @@ public class Application {
                         if (args.length > 0) {
                             zipCode = args[0];
                         }
-                        GetCityForecastByZIPResponse response = weatherClient.getCityForecastByZip(zipCode);
+                        GetCityForecastByZIPResponse response = 
+                                weatherClient.getCityForecastByZip(zipCode);
                     }
                 };
 	}
+
 
 }
