@@ -1,0 +1,733 @@
+.
+├── archivo.txt
+├── demoClient
+├── demoClient.backup
+│   ├── pom.xml
+│   ├── src
+│   │   └── main
+│   │       └── java
+│   │           └── hello
+│   │               ├── Application.java
+│   │               ├── WeatherClient.java
+│   │               └── WeatherConfiguration.java
+│   └── target
+│       ├── classes
+│       │   ├── hello
+│       │   │   ├── Application.class
+│       │   │   ├── WeatherClient.class
+│       │   │   ├── WeatherConfiguration.class
+│       │   │   └── wsdl
+│       │   │       ├── ArrayOfForecast.class
+│       │   │       ├── ArrayOfWeatherDescription.class
+│       │   │       ├── Forecast.class
+│       │   │       ├── ForecastReturn.class
+│       │   │       ├── GetCityForecastByZIP.class
+│       │   │       ├── GetCityForecastByZIPResponse.class
+│       │   │       ├── GetCityWeatherByZIP.class
+│       │   │       ├── GetCityWeatherByZIPResponse.class
+│       │   │       ├── GetWeatherInformation.class
+│       │   │       ├── GetWeatherInformationResponse.class
+│       │   │       ├── ObjectFactory.class
+│       │   │       ├── package-info.class
+│       │   │       ├── POP.class
+│       │   │       ├── Temp.class
+│       │   │       ├── WeatherDescription.class
+│       │   │       └── WeatherReturn.class
+│       │   └── META-INF
+│       │       └── sun-jaxb.episode
+│       ├── generated-sources
+│       │   ├── annotations
+│       │   └── xjc
+│       │       ├── hello
+│       │       │   └── wsdl
+│       │       │       ├── ArrayOfForecast.java
+│       │       │       ├── ArrayOfWeatherDescription.java
+│       │       │       ├── Forecast.java
+│       │       │       ├── ForecastReturn.java
+│       │       │       ├── GetCityForecastByZIP.java
+│       │       │       ├── GetCityForecastByZIPResponse.java
+│       │       │       ├── GetCityWeatherByZIP.java
+│       │       │       ├── GetCityWeatherByZIPResponse.java
+│       │       │       ├── GetWeatherInformation.java
+│       │       │       ├── GetWeatherInformationResponse.java
+│       │       │       ├── ObjectFactory.java
+│       │       │       ├── package-info.java
+│       │       │       ├── POP.java
+│       │       │       ├── Temp.java
+│       │       │       ├── WeatherDescription.java
+│       │       │       └── WeatherReturn.java
+│       │       └── META-INF
+│       │           └── sun-jaxb.episode
+│       ├── gs-consuming-web-service-0.1.0.jar
+│       ├── gs-consuming-web-service-0.1.0.jar.original
+│       ├── maven-archiver
+│       │   └── pom.properties
+│       └── maven-status
+│           └── maven-compiler-plugin
+│               └── compile
+│                   └── default-compile
+│                       ├── createdFiles.lst
+│                       └── inputFiles.lst
+├── demoServer
+│   ├── .mvn
+│   │   └── wrapper
+│   │       ├── maven-wrapper.jar
+│   │       └── maven-wrapper.properties
+│   ├── mvnw
+│   ├── mvnw.cmd
+│   ├── pom.xml
+│   ├── request.xml
+│   └── src
+│       └── main
+│           ├── java
+│           │   ├── hello
+│           │   │   ├── Application.java
+│           │   │   ├── CountryEndpoint.java
+│           │   │   ├── CountryRepository.java
+│           │   │   └── WebServiceConfig.java
+│           │   └── io
+│           │       └── spring
+│           │           └── guides
+│           │               └── gs_producing_web_service
+│           │                   ├── Country.java
+│           │                   ├── Currency.java
+│           │                   ├── GetCountryRequest.java
+│           │                   ├── GetCountryResponse.java
+│           │                   ├── ObjectFactory.java
+│           │                   └── package-info.java
+│           └── resources
+│               └── countries.xsd
+├── .git
+│   ├── branches
+│   ├── COMMIT_EDITMSG
+│   ├── config
+│   ├── description
+│   ├── HEAD
+│   ├── hooks
+│   │   ├── applypatch-msg.sample
+│   │   ├── commit-msg.sample
+│   │   ├── post-update.sample
+│   │   ├── pre-applypatch.sample
+│   │   ├── pre-commit.sample
+│   │   ├── prepare-commit-msg.sample
+│   │   ├── pre-push.sample
+│   │   ├── pre-rebase.sample
+│   │   └── update.sample
+│   ├── index
+│   ├── info
+│   │   └── exclude
+│   ├── logs
+│   │   ├── HEAD
+│   │   └── refs
+│   │       ├── heads
+│   │       │   └── master
+│   │       └── remotes
+│   │           └── origin
+│   │               ├── HEAD
+│   │               └── master
+│   ├── objects
+│   │   ├── 03
+│   │   │   └── 50cef94befe39c9489071431838338585e56a8
+│   │   ├── 04
+│   │   │   ├── 2be55c1b66f8b2946b0dc22af9d9bf466dff16
+│   │   │   └── 88fc9569289e033e3ea07e7ddaed8d9f393c86
+│   │   ├── 07
+│   │   │   └── 5ada858daee4e2d0af4aade723675fd0e256b2
+│   │   ├── 09
+│   │   │   └── 61014a68070f500336e7a2f06b96c4e83b13fe
+│   │   ├── 0c
+│   │   │   └── 6888c202ec0f7385fbfdabc26c41b7fac54c54
+│   │   ├── 0d
+│   │   │   ├── 5fb11105cab2c8d0b8f7d9fa5a9c84b05e3583
+│   │   │   ├── 602891fb800ca950efb3aa76e1fd39e634fcb0
+│   │   │   └── 8972ea14097a0c2938603be95287bff580fad3
+│   │   ├── 10
+│   │   │   └── 55bd2a60a9275fa8328e53e022e5a36254ead7
+│   │   ├── 11
+│   │   │   ├── be13d6315a2a4ae749c32e89025020bd74aea8
+│   │   │   └── ed9419ce1bb9ffba9d9b7914aab005a006a8c6
+│   │   ├── 13
+│   │   │   └── 399a4c51d54504412f6e922acde245f0968c5a
+│   │   ├── 16
+│   │   │   ├── 28060a97895dee6ffee4e0adb6bb9a98f23f85
+│   │   │   └── 8ed55713b2f2b2ca21a3f6d5f07188f3f8496a
+│   │   ├── 19
+│   │   │   ├── 19206a3a6c1f3a61009b8d68acdbdfe0d4d94e
+│   │   │   ├── bdea2cb47a8581f545064e8a77d843a8400e9b
+│   │   │   └── d791ccf1ab099cd1300b451cb05eb77ed54735
+│   │   ├── 1a
+│   │   │   └── dc714951e80bcb293f8050bc0c5acdb35469c5
+│   │   ├── 1b
+│   │   │   ├── 342d26c6b5310f7494fc8cf4f6952bbf1e6b8d
+│   │   │   └── c95ef386f229a3a49b088a8d1f6185a507ff26
+│   │   ├── 1c
+│   │   │   └── 417414ca957603c4995be2695659a3db209d7e
+│   │   ├── 1e
+│   │   │   └── 85ea3e82f228185c9d9e7833ac0843a0a899ef
+│   │   ├── 1f
+│   │   │   └── 3b1df5dee6cdd102e73bc992413c1189850bc9
+│   │   ├── 20
+│   │   │   └── 65053540756a0ecbaceb32ede34f88df01a67e
+│   │   ├── 21
+│   │   │   ├── 633a57923b3f9d8b01bf39f2509754befa2fc8
+│   │   │   ├── c89735df70937626b9309e7826ab06ef8a4916
+│   │   │   └── d145fc39d75ee42c73f2f74c03914a16d89ab7
+│   │   ├── 23
+│   │   │   ├── 5efc399934c30038b5e887a724af899e0c6242
+│   │   │   └── dcdb48b437a75090ba66d4e233168b109dc7fc
+│   │   ├── 24
+│   │   │   ├── 4e5fe5cd07a68083d1a2894481ccad89a7df12
+│   │   │   ├── af7e209c85f79034ea03b836a76c0a8add6296
+│   │   │   └── e7d14a13e982d561138ff6a3f0405c84e2e529
+│   │   ├── 25
+│   │   │   └── d5903fbd014604ef617962f70344ce4b449ab1
+│   │   ├── 29
+│   │   │   ├── 0349b13e2266a0431a61e95bf1c6c6d6395fb7
+│   │   │   └── 74169160fef78e8b0efac6eec880966eaef6f1
+│   │   ├── 2b
+│   │   │   └── 694d4ebc3b82a7ffefcf13aa2b516773c7b0b9
+│   │   ├── 2c
+│   │   │   └── f4be5ff70c0d74c1a74ebdf3d9e3ef48e6db30
+│   │   ├── 2d
+│   │   │   └── 510b8f17e0eb9037beb84bccd36af3e404532c
+│   │   ├── 2e
+│   │   │   └── ffe98e9f4d080c38995f12d03b2fdf7600bb65
+│   │   ├── 32
+│   │   │   └── 26d083fcd136414adeafc399d0511bad4bd401
+│   │   ├── 33
+│   │   │   └── 538b43d115db026f04c92c47bb4b19585d44d0
+│   │   ├── 37
+│   │   │   └── 34e5449b8288382a11bb8b615ec22080d5ecbd
+│   │   ├── 38
+│   │   │   ├── 1e3e9170b0f8529e9f79bd7a03971b54584f04
+│   │   │   └── 2ddea8beae890d3f6a81ace00b3f31dfff3e7f
+│   │   ├── 3d
+│   │   │   ├── 86641de1b85293e5dd0991e8b1640fd40c1bcb
+│   │   │   └── cd5f151f3b481b5ba7eeb22e2cf8b804238dda
+│   │   ├── 3e
+│   │   │   └── fdfcd1a1b0573eb3b335aa4b336d98dd17eef9
+│   │   ├── 3f
+│   │   │   └── b6c5dc39cf8afc30766b4d4d00a2209255d94e
+│   │   ├── 40
+│   │   │   └── 2ff274968e1e51cd0d476ba0f865caba7425c9
+│   │   ├── 43
+│   │   │   └── 60c4f88e821438ecb0ee87e05ef6e4955f1cb0
+│   │   ├── 44
+│   │   │   ├── 648821c31f01cbb613ce0fce3c4a34e7480058
+│   │   │   └── fabee0e11f02f609bbd10140b18d7a5665ab74
+│   │   ├── 45
+│   │   │   └── b7b390f152f1a985dc5a24f8a37f7f67fd38b6
+│   │   ├── 46
+│   │   │   └── 3d0773e3e2e71ff4d6436a61c0606350b4caa8
+│   │   ├── 47
+│   │   │   └── 328a9076a3b47bde7fe56eaa8fe776cf09d10d
+│   │   ├── 48
+│   │   │   ├── 1ab416cb7ff2ac84dd23f1e4b7b84794581fae
+│   │   │   ├── 548da73398eaca8f28b27b63d2c87a8086384c
+│   │   │   └── aa0c27996d156406c916c9856cb9f26ea678c8
+│   │   ├── 49
+│   │   │   └── e32a199102a3f1424f82373abe162839314531
+│   │   ├── 4b
+│   │   │   └── 56e74b970e50ca0c7c6088cc6331c88017397f
+│   │   ├── 4c
+│   │   │   └── 2bddf7d236a3e94795ecc9e3f5e886c32f6885
+│   │   ├── 4e
+│   │   │   └── a21a998d06d86f49c56ef32bd48cb42c2274ff
+│   │   ├── 4f
+│   │   │   └── 89d48e54fad8ac158b671dd1d7726295bfa3c3
+│   │   ├── 50
+│   │   │   └── dc6f52a65ca9afd9e94ff5d1c99a3069be9d66
+│   │   ├── 52
+│   │   │   ├── 02e1fddf9b9fe041840dffca4fcbbe3f1a79f3
+│   │   │   └── d63e41fd4751d84337905e6e5f386e7f50d2c2
+│   │   ├── 56
+│   │   │   ├── 4f3d1e6dd5c88549de7cb6703ecef7fe038dbe
+│   │   │   └── f763c83392180ab0babe1ecc358d27492c7716
+│   │   ├── 57
+│   │   │   ├── 3428585d38fc3c530aac361610e3812390b7c6
+│   │   │   └── c9b1daaf4d6986889e73f133c78a40e1fdc4e1
+│   │   ├── 58
+│   │   │   └── 17218d64e745a68de0fd76f99ad3ba7ef15490
+│   │   ├── 5a
+│   │   │   └── bd411428367c323420ff8ae573553055e7acbb
+│   │   ├── 5c
+│   │   │   ├── 071d943580ace44fa009427c0a6366fefd2107
+│   │   │   └── 8ff0898404e57c4691d82728509acc6a9efaed
+│   │   ├── 5d
+│   │   │   └── 10b59b77d33e0a82fe6b50d5a45d8bbebfce07
+│   │   ├── 5e
+│   │   │   └── 641f11e311292b72391bb9f98166b047e7c515
+│   │   ├── 5f
+│   │   │   └── f9d4badb72e02bb371921e035c4ebdf6dc1cb9
+│   │   ├── 60
+│   │   │   └── 525fee255675bcd2a6df79f18ac7597623c398
+│   │   ├── 61
+│   │   │   └── 73297e65b7e951e6181f46c58f3fd00152b78f
+│   │   ├── 62
+│   │   │   └── 46f25c629889e3b6fea7a9acbdb433c4f96280
+│   │   ├── 63
+│   │   │   ├── 8e6b909dea3b65a03aba5df20cc10a2ed653df
+│   │   │   └── 924339887af8a37287044054a762322ff3dcc4
+│   │   ├── 67
+│   │   │   ├── 1530e8beeaf0b66c3718cebd4e5318fa83d3bb
+│   │   │   └── 3588cf6d1ef8a0a01cd0bd8ca8f675b912ae90
+│   │   ├── 68
+│   │   │   └── b4a314b88a7d6519931eeaa36045d004e897a5
+│   │   ├── 69
+│   │   │   └── b5d8672743fc45be7ecdfbe4dcfbf387aeee4c
+│   │   ├── 6d
+│   │   │   └── 0c2a27771f1e482782464d49320b6800515d65
+│   │   ├── 6e
+│   │   │   └── 57ab4eb16dbdbf7c42391809af818996705467
+│   │   ├── 70
+│   │   │   └── ddd523d5310a4436ebd417e68c5fc55723941a
+│   │   ├── 71
+│   │   │   ├── 0845c35753f76b645a3ade427ae3fadcdf1685
+│   │   │   └── a501c5c301640dc9e32e333c713688e6e42b4f
+│   │   ├── 73
+│   │   │   └── d57914d284fd04b4eb811692a5b5aee8145c24
+│   │   ├── 74
+│   │   │   ├── a488b83c20312eefd517cb0f3ec7259df326ff
+│   │   │   └── beeeb432114a421103e6391b1eedceb4ded762
+│   │   ├── 76
+│   │   │   └── f6aa1bf2aa1f7aae5f3e4ecb4c86f03d599dc6
+│   │   ├── 77
+│   │   │   └── 90b5f088ea5769952d2fd32e9d80ac8819c2c7
+│   │   ├── 78
+│   │   │   └── af0f6d98cdbb470ae429543db646e1b7c43ac8
+│   │   ├── 79
+│   │   │   ├── 7a048eccbe4fe762d2084db3d45a0a182160f0
+│   │   │   └── e1182241c1e870d81ba191893a02e435d66cf8
+│   │   ├── 7a
+│   │   │   └── e7577e26586dd45b5008504017a39138470b89
+│   │   ├── 7c
+│   │   │   └── a2f4232821a67c116a9cf4236009c748a77ea5
+│   │   ├── 7d
+│   │   │   └── 77c04354e68bbd7163c198a1ccf875ca14eb5e
+│   │   ├── 7f
+│   │   │   └── 1b87576f15d4375e71de539383f30450fdec08
+│   │   ├── 81
+│   │   │   └── 2c1906c1c9e8fbeb6e11820db53b39357b2693
+│   │   ├── 83
+│   │   │   └── a87df32231096a8533f1a6444560f2bf956d95
+│   │   ├── 84
+│   │   │   └── f95b9cfd1370547a33bb575b71311e3f82db7d
+│   │   ├── 87
+│   │   │   └── d16e5341f538ed4c48fbe21a7565cb22ef4a14
+│   │   ├── 88
+│   │   │   └── ce60842e9493b4e821176621494f44aae59908
+│   │   ├── 8a
+│   │   │   ├── 65cccb0edc80a15788e6bcc765e15d455d5371
+│   │   │   └── 85245c49e844b6b842ecc6b7502a5ffbdb99f5
+│   │   ├── 8c
+│   │   │   ├── 676cc9434d7b089994780057d21033035bf0a0
+│   │   │   └── a074f24e8fea25c272bf59648160533909f0ba
+│   │   ├── 8e
+│   │   │   └── 59348719852613803c635df8c837fb239559c0
+│   │   ├── 92
+│   │   │   └── b649e788381041f9c73de14e7bf5b210629f38
+│   │   ├── 93
+│   │   │   └── 2c55e537fe913353921a9743a776b0347a6bca
+│   │   ├── 94
+│   │   │   └── ac5f86117c8d064fda7c0c52ade6c148cbace2
+│   │   ├── 96
+│   │   │   └── 2d962b9754ffd11d0835eb9e3f6b489201fea5
+│   │   ├── 97
+│   │   │   ├── b8fa3d336d1802ae4b60d6a4a87bd640a02000
+│   │   │   └── e07ce9cc0ea87350597d02038a25b89f1fcfbe
+│   │   ├── 99
+│   │   │   └── 952f9aaf2a6ea96df04d2378070ed2adf8430f
+│   │   ├── 9c
+│   │   │   └── 3a266518079eb22c6a9f9584868473d7128763
+│   │   ├── 9e
+│   │   │   └── b2fe90141b7bbf06ba9eeb13bc0d8f2275b8d0
+│   │   ├── 9f
+│   │   │   ├── a32ffc0c4f53de3fe5b3484d45d4db2d722bf2
+│   │   │   └── c06a6fa26afb2664c8786576dce5aab56f9682
+│   │   ├── a2
+│   │   │   └── 2f033cbd902c4edda39e218b8454a1708f7359
+│   │   ├── a3
+│   │   │   ├── 4acf2490a784ad8c27b2412418fa1660761667
+│   │   │   ├── e11a86d77669c2638cc7ad615047e6c91c1c80
+│   │   │   └── e540573007cf2d360f4d3df0bb2d3af75ccd4c
+│   │   ├── a7
+│   │   │   ├── 0943386cbba731e3071f6fa5ed66790ae111d4
+│   │   │   └── 5cad06254ab5681d37a7b6d7c0717ded956a67
+│   │   ├── a9
+│   │   │   └── daa16a8aec2da48ca308607221b47c207f3375
+│   │   ├── aa
+│   │   │   ├── 4b26349ade62086c50bef5a994eb94fd1848f0
+│   │   │   └── e2a73a2c9ce3eb3baef3737320c30119cfd604
+│   │   ├── ab
+│   │   │   └── 51cd87cd9acb751eafd6faf874402d6eb4bdc1
+│   │   ├── ad
+│   │   │   └── 1b57c5c87805fe62b0a478900c948978913370
+│   │   ├── b1
+│   │   │   └── 3041337262a7061c69bd2538c26cda08b51f2a
+│   │   ├── b2
+│   │   │   └── b1cdedce7af7ec7bed1c98b02114119edb93f1
+│   │   ├── b4
+│   │   │   └── 2bc7c91ed1fa0734427e617527b92f88dabd26
+│   │   ├── b6
+│   │   │   └── 5841e488abae990dcb2caa303ceea2e04c0226
+│   │   ├── b7
+│   │   │   └── b1c73cb934fe81024d5b6cdb3b6c8a615e1eee
+│   │   ├── b9
+│   │   │   └── fe4397918b2e366da8cae1e0ce6227fe7876de
+│   │   ├── bb
+│   │   │   ├── 30a8b74853ddce811039accd584cb496e58517
+│   │   │   └── d8733a3135c50d9da1064f0114e66cfcf89bcc
+│   │   ├── bc
+│   │   │   ├── 0bbacab4cae59e36edd84a210230801b40d3ef
+│   │   │   ├── 78f343eb54a49d181aee6d72ff772e878d413b
+│   │   │   └── d4732c00a601084a1402b3c1159154b81f6fcb
+│   │   ├── bd
+│   │   │   └── 49fbc00cefce0182271f7081bdaade43bbf67c
+│   │   ├── bf
+│   │   │   └── ee9d66a15d800711ed96bb657807b4410ec886
+│   │   ├── c0
+│   │   │   └── c10a45ebadf1437d7c496e87b64b2cf2ff5130
+│   │   ├── c1
+│   │   │   └── d6ec19523c2af179dbb27be2fbaed2ce38eccc
+│   │   ├── c2
+│   │   │   └── 4750e9b4ff87f24dd900811702283de189396d
+│   │   ├── c5
+│   │   │   └── 41b80b314fdba1dd3cf0c5ad074097ad17b8ad
+│   │   ├── c6
+│   │   │   └── 62e57ffeca11b57fa51b39772c3e334400d7f1
+│   │   ├── ca
+│   │   │   ├── 5f29930aef1500746da890f933f52b935ee8ae
+│   │   │   ├── ad2cbae1be4c7743ca4b727aedc4433571bb2c
+│   │   │   └── ea90d3a11e2d5f850074c6ad461e02b02d1266
+│   │   ├── cc
+│   │   │   └── d9ece475e1d01fd199ccb90b08770db8c0956e
+│   │   ├── ce
+│   │   │   └── bdc36a9ab9c27f5bf898057509a6922bc9cd76
+│   │   ├── cf
+│   │   │   └── af92804de9033130b76c895468a4758671eca2
+│   │   ├── d1
+│   │   │   ├── 270608f909bbaed7dd0fb0445164c039462392
+│   │   │   └── d2316896f185487fcef05dc94fc7e8e328eaac
+│   │   ├── d3
+│   │   │   └── 2a27f31654aef1dc5f5b5e5896c136944953b1
+│   │   ├── d4
+│   │   │   └── a65d8757d2532c4973b0861430ef3ad457a3e1
+│   │   ├── d6
+│   │   │   ├── 6d3196e839e6ad4685e8eb885bba0d7c546459
+│   │   │   └── 906ef8d8353056c06d0d7604f48e64171d19da
+│   │   ├── d7
+│   │   │   └── ecf360a4690b78378e9af5c8b21c765ef3b584
+│   │   ├── d8
+│   │   │   └── 6767284a14ba65c89067cff293f5f0213f19cd
+│   │   ├── da
+│   │   │   └── d5f091c0b9172f96e74616b54578839766c425
+│   │   ├── db
+│   │   │   └── 845fb3a20aeed89f60fba473916b291a8c1450
+│   │   ├── de
+│   │   │   └── 3f9fe8c2847778d8264dea5b4347c3cb773397
+│   │   ├── df
+│   │   │   └── 469a6cd25dfa968bf7d258fd8134aec38e73d6
+│   │   ├── e0
+│   │   │   └── 943cdee76f7a434216089d600019a24f4e5787
+│   │   ├── e2
+│   │   │   ├── 73b248ee03d299d5c95da7d1b4456189db8f57
+│   │   │   └── dd8fc3fe48494b6f4ad552a4639b37574febee
+│   │   ├── e3
+│   │   │   └── 56ab2b106eac2f678139477bf36008be5a6fa7
+│   │   ├── e4
+│   │   │   ├── 275fe7796ef52894ab827b103b66a76eeae5bb
+│   │   │   └── fb70b840b47d56f71c57646ea1ea6ad39d5012
+│   │   ├── e6
+│   │   │   └── 2f737e3dd36134611a852480750c355aa5d27a
+│   │   ├── ea
+│   │   │   ├── 11a50c68785757120ae8ed3df87c71d73c26bc
+│   │   │   └── f1008a060fda873389eaf92647c32bb6f1b6a4
+│   │   ├── ec
+│   │   │   └── 3138146b4abc7d5323515f375d4e5d017a410f
+│   │   ├── ed
+│   │   │   ├── 67f54fd2d18a3490e75028ba17a773c9656459
+│   │   │   ├── b41bb07164a634bf59c02a86b809b448f0e139
+│   │   │   └── cb7d9b301dee434de15fb938005b1ee2ea0215
+│   │   ├── ee
+│   │   │   ├── c441bce75a27fd4db890a83e70dd67b484e6eb
+│   │   │   └── cb4ef54b9cdf40128909abd54909caf3295809
+│   │   ├── ef
+│   │   │   └── 943175a511aecf0bbba266e9fe5ae409a4964b
+│   │   ├── f0
+│   │   │   ├── 0b7230ffd8649608571900d7901c3afdea184a
+│   │   │   └── 89df17bdd9078a0f2eac50434d287cecc5a1ae
+│   │   ├── f2
+│   │   │   └── 135e5c4a2c71e11a17d5d32087a209b931fd32
+│   │   ├── f3
+│   │   │   ├── 8b33228e2dea0c28a04c4c282ec324bac0f259
+│   │   │   └── bca2803be076d755e785f08af6d7fc2fcb4ec2
+│   │   ├── f4
+│   │   │   └── 8131959953844960a45ae4f39ce8ec08dce8ec
+│   │   ├── f7
+│   │   │   └── 2ed5d2079d2737f3ef420ddf84328563bf596c
+│   │   ├── fa
+│   │   │   ├── 876e6e07a548f2aff4688c0c092195baa01ee8
+│   │   │   └── b3138f66b06fe955c9ab5716fb98e84a219b3d
+│   │   ├── fb
+│   │   │   ├── 22e3b598ba2260d9733166aa04ce52597651bd
+│   │   │   ├── 5bf6ce1253eea866ec955f57f1a654d48e20da
+│   │   │   └── 769350469c328d341e7e8e8747156aa510383d
+│   │   ├── fd
+│   │   │   └── f790b5b86b8c1cfbaf62b24dced862902d24cd
+│   │   ├── ff
+│   │   │   └── 12488c9e396198fbe2654dd9d378a14f724f84
+│   │   ├── info
+│   │   └── pack
+│   │       ├── pack-fbdc24b006bff4827274fb63827e5afe99bbc1c7.idx
+│   │       └── pack-fbdc24b006bff4827274fb63827e5afe99bbc1c7.pack
+│   ├── packed-refs
+│   └── refs
+│       ├── heads
+│       │   └── master
+│       ├── remotes
+│       │   └── origin
+│       │       ├── HEAD
+│       │       └── master
+│       └── tags
+├── .gitignore
+├── Holaste
+│   ├── build
+│   │   ├── empty
+│   │   ├── generated-sources
+│   │   │   └── ap-source-output
+│   │   └── web
+│   │       ├── index.jsp
+│   │       ├── META-INF
+│   │       │   ├── context.xml
+│   │       │   └── MANIFEST.MF
+│   │       └── WEB-INF
+│   │           ├── classes
+│   │           │   ├── hola
+│   │           │   │   └── ServicioWeb.class
+│   │           │   ├── .netbeans_automatic_build
+│   │           │   └── .netbeans_update_resources
+│   │           ├── lib
+│   │           │   ├── activation.jar
+│   │           │   ├── webservices-api.jar
+│   │           │   ├── webservices-extra-api.jar
+│   │           │   ├── webservices-extra.jar
+│   │           │   ├── webservices-rt.jar
+│   │           │   └── webservices-tools.jar
+│   │           ├── sun-jaxws.xml
+│   │           └── web.xml
+│   ├── build.xml
+│   ├── nbproject
+│   │   ├── ant-deploy.xml
+│   │   ├── build-impl.xml
+│   │   ├── genfiles.properties
+│   │   ├── jaxws-build.xml
+│   │   ├── jax-ws.xml
+│   │   ├── private
+│   │   │   ├── private.properties
+│   │   │   └── private.xml
+│   │   ├── project.properties
+│   │   └── project.xml
+│   ├── src
+│   │   ├── conf
+│   │   │   └── MANIFEST.MF
+│   │   └── java
+│   │       └── hola
+│   │           └── ServicioWeb.java
+│   └── web
+│       ├── index.jsp
+│       ├── META-INF
+│       │   └── context.xml
+│       └── WEB-INF
+│           ├── sun-jaxws.xml
+│           └── web.xml
+├── JAX-WS-Example
+│   ├── pom.xml
+│   ├── src
+│   │   └── main
+│   │       └── java
+│   │           └── com
+│   │               └── javatpoint
+│   │                   ├── HelloWorldClient.java
+│   │                   ├── HelloWorldImpl.java
+│   │                   ├── HelloWorld.java
+│   │                   └── HelloWorldPublisher.java
+│   └── target
+│       ├── classes
+│       │   ├── com
+│       │   │   └── javatpoint
+│       │   │       ├── HelloWorld.class
+│       │   │       ├── HelloWorldClient.class
+│       │   │       ├── HelloWorldImpl.class
+│       │   │       └── HelloWorldPublisher.class
+│       │   └── .netbeans_automatic_build
+│       ├── generated-sources
+│       │   └── annotations
+│       ├── JAX-WS-Example-1.jar
+│       ├── JAX-WS-Example-1.jar.original
+│       ├── maven-archiver
+│       │   └── pom.properties
+│       ├── maven-status
+│       │   └── maven-compiler-plugin
+│       │       └── compile
+│       │           └── default-compile
+│       │               ├── createdFiles.lst
+│       │               └── inputFiles.lst
+│       └── test-classes
+│           └── .netbeans_automatic_build
+├── README.md
+├── spring-boot-hello
+│   ├── pom.xml
+│   ├── src
+│   │   ├── main
+│   │   │   └── java
+│   │   │       └── hello
+│   │   │           ├── Application.java
+│   │   │           └── HelloController.java
+│   │   └── test
+│   │       └── java
+│   │           └── hello
+│   │               ├── HelloControllerIT.java
+│   │               └── HelloControllerTest.java
+│   └── target
+│       ├── classes
+│       │   └── hello
+│       │       ├── Application.class
+│       │       └── HelloController.class
+│       ├── generated-sources
+│       │   └── annotations
+│       ├── generated-test-sources
+│       │   └── test-annotations
+│       ├── gs-spring-boot-0.1.0.jar
+│       ├── gs-spring-boot-0.1.0.jar.original
+│       ├── maven-archiver
+│       │   └── pom.properties
+│       ├── maven-status
+│       │   └── maven-compiler-plugin
+│       │       ├── compile
+│       │       │   └── default-compile
+│       │       │       ├── createdFiles.lst
+│       │       │       └── inputFiles.lst
+│       │       └── testCompile
+│       │           └── default-testCompile
+│       │               ├── createdFiles.lst
+│       │               └── inputFiles.lst
+│       ├── surefire-reports
+│       │   ├── hello.HelloControllerTest.txt
+│       │   └── TEST-hello.HelloControllerTest.xml
+│       └── test-classes
+│           └── hello
+│               ├── HelloControllerIT.class
+│               └── HelloControllerTest.class
+├── spring-boot-httpget
+│   ├── pom.xml
+│   ├── src
+│   │   ├── main
+│   │   │   └── java
+│   │   │       └── hello
+│   │   │           ├── Application.java
+│   │   │           ├── GreetingController.java
+│   │   │           └── Greeting.java
+│   │   └── test
+│   │       └── java
+│   │           └── hello
+│   └── target
+│       ├── classes
+│       │   └── hello
+│       │       ├── Application.class
+│       │       ├── Greeting.class
+│       │       └── GreetingController.class
+│       ├── generated-sources
+│       │   └── annotations
+│       ├── gs-rest-service-0.1.0.jar
+│       ├── gs-rest-service-0.1.0.jar.original
+│       ├── maven-archiver
+│       │   └── pom.properties
+│       └── maven-status
+│           └── maven-compiler-plugin
+│               ├── compile
+│               │   └── default-compile
+│               │       ├── createdFiles.lst
+│               │       └── inputFiles.lst
+│               └── testCompile
+│                   └── default-testCompile
+│                       └── inputFiles.lst
+├── spring-boot-webContent
+│   ├── pom.xml
+│   ├── src
+│   │   ├── main
+│   │   │   ├── java
+│   │   │   │   └── hello
+│   │   │   │       ├── Application.java
+│   │   │   │       └── GreetingController.java
+│   │   │   └── resources
+│   │   │       └── templates
+│   │   │           └── greeting.html
+│   │   └── test
+│   │       └── java
+│   │           └── hello
+│   └── target
+│       ├── classes
+│       │   ├── hello
+│       │   │   ├── Application.class
+│       │   │   └── GreetingController.class
+│       │   └── templates
+│       │       └── greeting.html
+│       ├── generated-sources
+│       │   └── annotations
+│       ├── gs-serving-web-content-0.1.0.jar
+│       ├── gs-serving-web-content-0.1.0.jar.original
+│       ├── maven-archiver
+│       │   └── pom.properties
+│       └── maven-status
+│           └── maven-compiler-plugin
+│               ├── compile
+│               │   └── default-compile
+│               │       ├── createdFiles.lst
+│               │       └── inputFiles.lst
+│               └── testCompile
+│                   └── default-testCompile
+│                       └── inputFiles.lst
+├── springDataAndMongoDB
+│   ├── pom.xml
+│   ├── src
+│   │   └── main
+│   │       └── java
+│   │           └── hello
+│   │               ├── Application.java
+│   │               ├── Customer.java
+│   │               └── CustomerRepository.java
+│   └── target
+│       ├── classes
+│       │   └── hello
+│       │       ├── Application.class
+│       │       ├── Customer.class
+│       │       └── CustomerRepository.class
+│       ├── generated-sources
+│       │   └── annotations
+│       ├── gs-accessing-data-mongodb-0.1.0.jar
+│       ├── gs-accessing-data-mongodb-0.1.0.jar.original
+│       ├── maven-archiver
+│       │   └── pom.properties
+│       └── maven-status
+│           └── maven-compiler-plugin
+│               └── compile
+│                   └── default-compile
+│                       ├── createdFiles.lst
+│                       └── inputFiles.lst
+└── springMongoDBCRUD
+    ├── pom.xml
+    └── src
+        └── main
+            ├── java
+            │   ├── app
+            │   │   └── App.java
+            │   └── crud
+            │       ├── Bean
+            │       │   └── Employee.java
+            │       └── dao
+            │           ├── EmployeeDaoImpl.java
+            │           └── EmployeeDao.java
+            └── resources
+                └── spring-beans.xml
+
+329 directories, 401 files
