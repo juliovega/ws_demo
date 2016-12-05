@@ -6,6 +6,7 @@
 package com.example;
 
 import com.example.stubs.Persona;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 /**
@@ -15,9 +16,12 @@ import org.springframework.stereotype.Component;
 @Component("PersonaService")
 public class PersonaService implements Persona{
 
+   @Autowired
+   private ServiceCommon serviceCommon;
+    
     @Override
     public String getPersona(String name, Integer age) {
-        return "Hola "+name+", tu edad es: "+age;
+        return "Hola "+name+", tu edad es: "+age +" "+ serviceCommon.test();
     }
     
 }
