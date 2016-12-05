@@ -13,7 +13,7 @@ import org.springframework.data.annotation.Id;
  */
 public class Person {
     @Id
-    private int id;
+    private String id;
     
     private String name;
     private int age;
@@ -27,17 +27,17 @@ public class Person {
         this.age=edad;
     }
 
-    Person(int incrementAndGet, String name, int edad) {
+    Person(String incrementAndGet, String name, int edad) {
         this.id=incrementAndGet;
         this.name=name;
         this.age=edad;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -59,6 +59,6 @@ public class Person {
     
     @Override
     public String toString(){
-        return "name: "+name+" age: "+age;
+        return "id: "+id+ " name: "+name+" age: "+age;
     }
 }
