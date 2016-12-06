@@ -73,10 +73,21 @@ public class PersonController {
     }
     
     
-    @RequestMapping("/modify")
+    /*@RequestMapping("/modify")
     public String modifyPerson(Person p,@RequestParam(value ="ageM") int age){
         p.setAge(age);
         personRepository.save(p);
         return p.toString();
+    }*/
+    
+    @RequestMapping("/modifyAge")
+    public String modifyPerson(@RequestBody Person person,@RequestParam(value="ageM")Integer ageM){
+        Person p=personRepository.findByNameAndAge(person.getName(), person.getAge());
+        if(p!=null){
+            p.setAge(ageM);
+            return personRepository.save(p).toString();
+        }
+        person.setAge(ageM);
+        return personRepository.save(person).toString();
     }
 }
