@@ -1,12 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package hello;
 
 import java.util.List;
+import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -49,5 +46,37 @@ public class PersonController {
             person=new Person(name, age);
         }
         return personRepository.save(person).toString();
+    }
+    
+    @RequestMapping(method = RequestMethod.POST,value="/savePersonJSON")
+    public String savePersonJSON(@RequestBody Person p){
+        return "saving JSON person" +personRepository.save(p).toString();        
+    }
+ 
+     
+    @RequestMapping(method = RequestMethod.POST,value="/savePersonParsingJSON")
+    public String savePersonJSON(@RequestBody Map<String,Object> p){
+        Person person=new Person();
+        Object tmp=p.get("name");
+        if(tmp instanceof String){
+            person.setName((String)tmp);
+        }else{
+            person=null;
+        }
+        if(person==null){
+            return "faltan parametros";
+        }
+        tmp=p.get("age");
+        person.setAge((Integer)tmp);
+        return "saving JSON person parsed" +personRepository.save(
+                person).toString();        
+    }
+    
+    
+    @RequestMapping("/modify")
+    public String modifyPerson(Person p,@RequestParam(value ="ageM") int age){
+        p.setAge(age);
+        personRepository.save(p);
+        return p.toString();
     }
 }
