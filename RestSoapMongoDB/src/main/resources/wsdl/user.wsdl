@@ -22,15 +22,21 @@
     <message name="validateUserAndPassResponse">
         <part name="parameters" element="tns:validateUserAndPassResponse"/>
     </message>
-    <portType name="UserP">
+    <portType name="UserPort">
         <operation name="validateUserAndPass">
             <input wsam:Action="http://javatpoint.com/Persona/validateUserAndPassRequest" 
                    message="tns:validateUserAndPass"/>
             <output wsam:Action="http://javatpoint.com/Persona/validateUserAndPassResponse" 
                     message="tns:validateUserAndPassResponse"/>
         </operation>
+        <operation name="addUser">
+            <input wsam:Action="http://javatpoint.com/Persona/addUser" 
+                   message="tns:addUser" />
+            <output wsam:Action="http://javatpoint.com/Persona/addUserResponse" 
+                    message="tns:addUserResponse" />
+        </operation>
     </portType>
-    <binding name="UserImplPortBinding" type="tns:UserP">
+    <binding name="UserImplPortBinding" type="tns:UserPort">
         <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
         <operation name="validateUserAndPass">
             <soap:operation soapAction=""/>
@@ -39,6 +45,14 @@
             </input>
             <output>
                 <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="addUser">
+            <input>
+                <soap:operation use="literal"/>
+            </input>
+            <output>
+                <soap:operation use="literal"/>
             </output>
         </operation>
     </binding>

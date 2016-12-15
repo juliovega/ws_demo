@@ -6,7 +6,7 @@ import org.springframework.boot.context.embedded.EmbeddedServletContainerFactory
 import org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainerFactory;
 import org.springframework.context.annotation.Bean;
 import restSoap.stubs.UserImplService;
-import restSoap.stubs.UserP;
+import restSoap.stubs.UserPort;
 
 @SpringBootApplication
 public class RestSoapApplication {
@@ -14,8 +14,8 @@ public class RestSoapApplication {
     public static void main(String[] args) {
         SpringApplication.run(RestSoapApplication.class, args);
         UserImplService uService = new UserImplService();
-        UserP userP = uService.getUserImplPort();
-        System.out.println("tu id es"+userP.validateUserAndPass("1","1"));
+        UserPort userP = uService.getUserImplPort();
+    //    System.out.println("tu id es"+userP.validateUserAndPass("1","1"));
     }
 
     @Bean

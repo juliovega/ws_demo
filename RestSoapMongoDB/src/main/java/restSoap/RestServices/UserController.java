@@ -10,7 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import restSoap.stubs.UserImplService;
-import restSoap.stubs.UserP;
+import restSoap.stubs.UserPort;
+import restSoap.stubs.UserRequest;
 
 /**
  *
@@ -23,19 +24,23 @@ public class UserController {
     
     @RequestMapping("/getId")
     public int getId(@RequestParam(value="user")String user,@RequestParam(value="password")String password){
-        UserP userP = uService.getUserImplPort();
-        return userP.validateUserAndPass(user, password);
+        UserPort userP = uService.getUserImplPort();
+        UserRequest ureq=new UserRequest();
+        ureq.setUsername(user);
+        ureq.setPassword(password);
+        return userP.validateUserAndPass(ureq).getId();
     }
     
-    /*@RequestMapping("/insertUser")
+    @RequestMapping("/insertUser")
     public String insertUser(@RequestParam(value="user") User user){
-        UserP userP=uService.getUserImplPort();
-        if(userP.addUser(user)){
+        UserPort userP=uService.getUserImplPort();
+        /*if(userP.addUser(user)){
             return "se agregó al usuario: "+user.toString();
         }else{
             return "no se pudo agregar al usuario";
-        }
-    }*/
+        }*/
+        return null;
+    }
     
     
     
